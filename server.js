@@ -11,8 +11,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Simple JSON file database
-const DATA_DIR = process.env.DATA_DIR || './data';
+// Simple JSON file database - stored in project directory (free tier compatible)
+const DATA_DIR = path.join(__dirname, 'data');
 const DB_FILE = path.join(DATA_DIR, 'users.json');
 
 // Ensure data directory exists
